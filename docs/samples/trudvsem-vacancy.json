@@ -1,0 +1,92 @@
+{
+  "status": "200",
+  "request": {
+    "api": "v1"
+  },
+  "meta": {
+    "total": 1,
+    "limit": 100
+  },
+  "results": {
+    "vacancies": [
+      {
+        "vacancy": {
+          "id": "5baac828-f6c3-11f0-a027-0dd543315e5a",
+          "source": "Вакансия работодателя",
+          "region": {
+            "region_code": "6300000000000",
+            "name": "Самарская область"
+          },
+          "company": {
+            "companycode": "1026303782372",
+            "email": "pansionat9@yandex.ru",
+            "hr-agency": false,
+            "inn": "6378003908",
+            "kpp": "637501001",
+            "name": "ГБУ СО \"ЮЖНЫЙ ДОМ-ИНТЕРНАТ\"",
+            "ogrn": "1026303782372",
+            "site": "http://ypvt.1gb.ru",
+            "url": "https://trudvsem.ru/company/1026303782372"
+          },
+          "creation-date": "2026-01-21",
+          "date_modify": "2026-10-27T13:39:59+0300",
+          "salary": "от 27093",
+          "salary_min": 27093,
+          "salary_max": 27093,
+          "job-name": "Парикмахер",
+          "vac_url": "https://trudvsem.ru/vacancy/card/1026303782372/5baac828-f6c3-11f0-a027-0dd543315e5a",
+          "employment": "Частичная занятость",
+          "schedule": "Неполный рабочий день/неполная рабочая неделя",
+          "qualification": "Среднее профессиональное образование",
+          "requirements": "доброжелательность; стрессоустойчивость;",
+          "duty": "Предоставление типовых парикмахерских услуг. Выполнение классических женских, мужских и комбинированных укладок волос различными инструментами и способами.Химическая завивка волос классическим методом.Окрашивание волос на основе базовых техник. Оформление усов, бороды, бакенбард классическим методом.",
+          "category": {
+            "specialisation": "Здравоохранение и социальное обеспечение"
+          },
+          "requirement": {
+            "education": "Среднее профессиональное образование",
+            "qualification": "1/2 ставки",
+            "experience": 0
+          },
+          "addresses": {
+            "address": [
+              {
+                "location": "Самарская область, Пестравский район, Высокое село, Степная улица, 1 ",
+                "lng": "50.06073",
+                "lat": "52.394726"
+              }
+            ]
+          },
+          "social_protected": "",
+          "contact_list": [
+            {
+              "contact_type": "Телефон",
+              "contact_value": "+7(846) 742-33-64"
+            },
+            {
+              "contact_type": "Эл. почта",
+              "contact_value": "pansionat9@yandex.ru"
+            }
+          ],
+          "contact_person": "Безбородникова Ксения Владимировна ",
+          "work_places": 1,
+          "code_profession": "103628",
+          "typicalPosition": "Парикмахер",
+          "skills": [],
+          "addressOffice": "В",
+          "workPlaceType": {
+            "workPlaceForeign": false,
+            "workPlaceOrdinary": true,
+            "workPlaceQuota": false,
+            "workPlaceSpecial": false
+          },
+          "medicalDocuments": "Медицинская книжка",
+          "shift": [],
+          "conditions": "Вредные",
+          "trainingDays": 0,
+          "currency": "«руб.»"
+        }
+      }
+    ]
+  }
+}

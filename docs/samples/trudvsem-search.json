@@ -1,0 +1,229 @@
+{
+  "status": "200",
+  "request": {
+    "api": "v1"
+  },
+  "meta": {
+    "total": 4083,
+    "limit": 3
+  },
+  "results": {
+    "vacancies": [
+      {
+        "vacancy": {
+          "id": "20252168-b671-11f1-85fc-83a545b8b137",
+          "source": "Вакансия работодателя",
+          "region": {
+            "region_code": "3600000000000",
+            "name": "Воронежская область"
+          },
+          "company": {
+            "companycode": "1153668006876",
+            "email": "haffi_90@mail.ru",
+            "hr-agency": false,
+            "inn": "3604019578",
+            "kpp": "360401001",
+            "name": "ООО \"ЖКУ\"",
+            "ogrn": "1153668006876",
+            "url": "https://trudvsem.ru/company/1153668006876"
+          },
+          "creation-date": "2026-09-22",
+          "date_modify": "2026-10-15T11:33:50+0300",
+          "salary": "от 33100",
+          "salary_min": 33100,
+          "salary_max": 33500,
+          "job-name": "Разнорабочий",
+          "vac_url": "https://trudvsem.ru/vacancy/card/1153668006876/20252168-b671-11f1-85fc-83a545b8b137",
+          "schedule": "Полный рабочий день",
+          "qualification": "Разнорабочий",
+          "requirements": "Разнорабочий",
+          "duty": "Разнорабочий",
+          "category": {
+            "specialisation": "ЖКХ, эксплуатация"
+          },
+          "requirement": {
+            "education": "Общее образование",
+            "experience": 1
+          },
+          "addresses": {
+            "address": [
+              {
+                "location": "Воронежская область, Борисоглебский район, г Борисоглебск, Свободы улица, дом: 265А;",
+                "lng": "42.073207",
+                "lat": "51.374708"
+              }
+            ]
+          },
+          "social_protected": "",
+          "contact_list": [
+            {
+              "contact_type": "Телефон",
+              "contact_value": "+7(473) 542-51-90"
+            }
+          ],
+          "contact_person": "Селезнев Андрей Сергеевич",
+          "work_places": 1,
+          "code_profession": "104729",
+          "typicalPosition": "Разнорабочий",
+          "skills": [],
+          "workPlaceType": {
+            "workPlaceForeign": false,
+            "workPlaceOrdinary": true,
+            "workPlaceQuota": false,
+            "workPlaceSpecial": false
+          },
+          "shift": [],
+          "trainingDays": 0,
+          "currency": "«руб.»"
+        }
+      },
+      {
+        "vacancy": {
+          "id": "41cdaee6-c6f2-11f1-aa68-7523fb122f6d",
+          "source": "Вакансия работодателя",
+          "region": {
+            "region_code": "0500000000000",
+            "name": "Республика Дагестан"
+          },
+          "company": {
+            "companycode": "1020500993171",
+            "email": "gbu_kayakent@e-dag.ru",
+            "hr-agency": false,
+            "inn": "0515004278",
+            "kpp": "051501001",
+            "name": "ГБУ РД \" КАЯКЕНТСКАЯ ЦРБ\"",
+            "ogrn": "1020500993171",
+            "site": "http://каякентскаяцрб.рф",
+            "url": "https://trudvsem.ru/company/1020500993171"
+          },
+          "creation-date": "2026-10-13",
+          "date_modify": "2026-10-13T14:05:56+0300",
+          "salary": "от 35000",
+          "salary_min": 35000,
+          "salary_max": 40000,
+          "job-name": "Разнорабочий",
+          "vac_url": "https://trudvsem.ru/vacancy/card/1020500993171/41cdaee6-c6f2-11f1-aa68-7523fb122f6d",
+          "schedule": "Полный рабочий день",
+          "qualification": "Средняя",
+          "requirements": "Разнорабочий",
+          "duty": "Разнорабочий",
+          "category": {
+            "specialisation": "Рабочие специальности"
+          },
+          "requirement": {
+            "education": "Общее образование",
+            "experience": 0
+          },
+          "addresses": {
+            "address": [
+              {
+                "location": "Дагестан республика, Каякентский район, Каякент село, Ш.Шихсаидова улица, дом: 33;",
+                "lng": "47.904235",
+                "lat": "42.397518"
+              }
+            ]
+          },
+          "social_protected": "",
+          "contact_list": [
+            {
+              "contact_type": "Эл. почта",
+              "contact_value": "rashid.adzhiyev.68@mail.ru"
+            },
+            {
+              "contact_type": "Телефон",
+              "contact_value": "+7(963) 410-44-43"
+            }
+          ],
+          "contact_person": "Аджиев Рашид Шапиюлаевич",
+          "work_places": 1,
+          "code_profession": "104270",
+          "typicalPosition": "Разнорабочий",
+          "skills": [],
+          "workPlaceType": {
+            "workPlaceForeign": false,
+            "workPlaceOrdinary": true,
+            "workPlaceQuota": false,
+            "workPlaceSpecial": false
+          },
+          "shift": [],
+          "trainingDays": 0,
+          "currency": "«руб.»"
+        }
+      },
+      {
+        "vacancy": {
+          "id": "a05d7ad0-e0a2-11f0-a6fd-690b9f9d74c0",
+          "source": "Вакансия работодателя",
+          "region": {
+            "region_code": "2300000000000",
+            "name": "Краснодарский край"
+          },
+          "company": {
+            "companycode": "1122365001220",
+            "email": "ooogkservice@yandex.ru",
+            "hr-agency": false,
+            "inn": "2365019815",
+            "kpp": "236501001",
+            "name": "ООО \"ФИРМА МЕРКУРИЙ\"",
+            "ogrn": "1122365001220",
+            "url": "https://trudvsem.ru/company/1122365001220"
+          },
+          "creation-date": "2025-12-24",
+          "date_modify": "2026-10-12T11:54:57+0300",
+          "salary": "от 27093",
+          "salary_min": 27093,
+          "salary_max": 30000,
+          "job-name": "Разнорабочий",
+          "vac_url": "https://trudvsem.ru/vacancy/card/1122365001220/a05d7ad0-e0a2-11f0-a6fd-690b9f9d74c0",
+          "employment": "Полная занятость",
+          "schedule": "Полный рабочий день",
+          "qualification": "Не требующие квалификации",
+          "requirements": "Разнорабочий",
+          "duty": "Разнорабочий",
+          "category": {
+            "specialisation": "Работы, не требующие квалификации"
+          },
+          "requirement": {
+            "education": "Общее образование",
+            "experience": 0
+          },
+          "addresses": {
+            "address": [
+              {
+                "location": "Краснодарский край, Туапсинский район, г Туапсе, Калараша улица, дом: Д. 46;офис/квартира: ПОМЕЩ. 157;",
+                "lng": "39.073723",
+                "lat": "44.125419"
+              }
+            ]
+          },
+          "social_protected": "",
+          "contact_list": [
+            {
+              "contact_type": "Телефон",
+              "contact_value": "+7(908) 683-58-18"
+            },
+            {
+              "contact_type": "Эл. почта",
+              "contact_value": "ooogkservice@yandex.ru"
+            }
+          ],
+          "contact_person": "Круть Михаил Павлович",
+          "work_places": 2,
+          "code_profession": "103804",
+          "typicalPosition": "Разнорабочий",
+          "skills": [],
+          "workPlaceType": {
+            "workPlaceForeign": false,
+            "workPlaceOrdinary": true,
+            "workPlaceQuota": false,
+            "workPlaceSpecial": false
+          },
+          "shift": [],
+          "conditions": "Оптимальные",
+          "trainingDays": 0,
+          "currency": "«руб.»"
+        }
+      }
+    ]
+  }
+}
