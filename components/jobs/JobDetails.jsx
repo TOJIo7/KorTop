@@ -1,16 +1,17 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Building2, ExternalLink, MapPin, Phone, Mail } from "lucide-react";
-import { formatDate, formatSalary } from "@/lib/format";
+import { formatDate, formatSalary, salaryInSomoni } from "@/lib/format";
 import { buttonStyles } from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import FavoriteButton from "./FavoriteButton";
 
 // Все поля вакансии (V-9). Тексты — как прислал работодатель, на русском, с пометкой.
 // saved — показываем сохранённую копию из избранного (вакансию сняли)
-export default function JobDetails({ job, saved = false }) {
+export default function JobDetails({ job, saved = false, rate = null }) {
   const t = useTranslations("job");
   const tCard = useTranslations("jobs.card");
   const locale = useLocale();
+  const somoni = salaryInSomoni(job, rate, locale);
 
   const facts = [
     [t("employment"), job.employment],
@@ -24,7 +25,10 @@ export default function JobDetails({ job, saved = false }) {
     <article className="flex flex-col gap-4">
       <header className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold leading-tight">{job.title}</h1>
-        <p className="text-2xl font-bold text-brand-800">{formatSalary(job, locale, tCard)}</p>
+        <p className="text-2xl font-bold text-brand-800">
+          {formatSalary(job, locale, tCard)}
+          {somoni && <span className="ml-2 text-lg font-medium text-slate-500">{somoni}</span>}
+        </p>
         {job.employer && (
           <p className="flex items-center gap-2 text-slate-700">
             <Building2 size={18} aria-hidden="true" /> {job.employer}

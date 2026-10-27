@@ -1,5 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { searchJobs } from "@/lib/trudvsem";
+import { getRateOrNull } from "@/lib/safeRate";
 import { formatDateTime, formatNumber, formatRub } from "@/lib/format";
 import { hasActiveFilters } from "@/lib/jobFilters";
 import ErrorState from "@/components/ui/ErrorState";
@@ -19,6 +20,7 @@ export default async function JobResults({ filters }) {
   } catch {
     return <ErrorState title={t("error.title")} hint={t("error.hint")} />;
   }
+  const rate = (await getRateOrNull())?.rate ?? null;
 
   const { jobs, total, pageSize, fetchedAt } = result;
   const totalPages = Math.ceil(total / pageSize);
@@ -41,7 +43,7 @@ export default async function JobResults({ filters }) {
         <ul className="flex flex-col gap-3">
           {jobs.map((job) => (
             <li key={job.id}>
-              <JobCard job={job} action={<FavoriteButton job={job} />} />
+              <JobCard job={job} rate={rate} action={<FavoriteButton job={job} />} />
             </li>
           ))}
         </ul>

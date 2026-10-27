@@ -1,13 +1,14 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Calendar, MapPin } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { formatDate, formatSalary } from "@/lib/format";
+import { formatDate, formatSalary, salaryInSomoni } from "@/lib/format";
 import Badge from "@/components/ui/Badge";
 
 // Карточка вакансии в списке (V-8). Работает и на сервере, и в избранном (клиент)
-export default function JobCard({ job, action }) {
+export default function JobCard({ job, action, rate = null }) {
   const t = useTranslations("jobs.card");
   const locale = useLocale();
+  const somoni = salaryInSomoni(job, rate, locale);
 
   return (
     <article className="relative flex flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4">
@@ -20,7 +21,10 @@ export default function JobCard({ job, action }) {
         </h2>
         {action && <div className="relative z-10">{action}</div>}
       </div>
-      <p className="text-xl font-bold text-slate-900">{formatSalary(job, locale, t)}</p>
+      <p className="text-xl font-bold text-slate-900">
+        {formatSalary(job, locale, t)}
+        {somoni && <span className="ml-2 text-base font-medium text-slate-500">{somoni}</span>}
+      </p>
       {job.employer && <p className="text-slate-700">{job.employer}</p>}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-600">
         {job.region && (

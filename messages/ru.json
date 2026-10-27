@@ -128,6 +128,21 @@
       "cbr": "ЦБ РФ"
     }
   },
+  "tickets": {
+    "from": "Откуда",
+    "to": "Куда",
+    "month": "Месяц",
+    "origins": { "DYU": "Душанбе", "LBD": "Худжанд" },
+    "submit": "Показать цены",
+    "searching": "Ищем…",
+    "approx": "Примерная цена по данным Aviasales на {date}. Точная цена — при покупке.",
+    "priceFrom": "от {price}",
+    "view": "Смотреть",
+    "direct": "Без пересадок",
+    "transfers": "{count, plural, one {# пересадка} few {# пересадки} many {# пересадок} other {# пересадки}}",
+    "noPrices": "Цены не найдены. Проверьте билеты на Aviasales.",
+    "openAviasales": "Смотреть на Aviasales"
+  },
   "notFound": {
     "title": "Страница не найдена",
     "text": "Возможно, ссылка устарела или в ней ошибка.",

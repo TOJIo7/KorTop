@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getJob } from "@/lib/trudvsem";
 import { findRegionByTrudvsemCode } from "@/lib/regions";
+import { getRateOrNull } from "@/lib/safeRate";
 import JobDetails from "@/components/jobs/JobDetails";
 import SavedJobFallback from "@/components/jobs/SavedJobFallback";
 import CalculatorWithRate from "@/components/patent/CalculatorWithRate";
@@ -59,9 +60,10 @@ async function JobContent({ id }) {
   if (!result) return <SavedJobFallback id={id} />;
 
   const { job } = result;
+  const rate = (await getRateOrNull())?.rate ?? null;
   return (
     <>
-      <JobDetails job={job} />
+      <JobDetails job={job} rate={rate} />
       {/* P-4: калькулятор сразу заполнен зарплатой и регионом этой вакансии */}
       <Suspense fallback={<Skeleton className="h-96 w-full" />}>
         <CalculatorWithRate
