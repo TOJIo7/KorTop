@@ -17,11 +17,12 @@ export default function JobFilters({ initial }) {
   const [text, setText] = useState(initial.text);
   const [region, setRegion] = useState(initial.region);
   const [housing, setHousing] = useState(initial.housing);
+  const [foreign, setForeign] = useState(initial.foreign ?? false);
   const [salary, setSalary] = useState(initial.salary ?? "");
 
   function submit(e) {
     e.preventDefault();
-    const query = toJobsQuery({ text: text.trim(), region, housing, salary: Number(salary) || null });
+    const query = toJobsQuery({ text: text.trim(), region, housing, foreign, salary: Number(salary) || null });
     startTransition(() => router.push({ pathname: "/jobs", query }));
   }
 
@@ -36,32 +37,33 @@ export default function JobFilters({ initial }) {
         enterKeyHint="search"
       />
       <RegionPicker value={region} onChange={setRegion} />
-      <div className="flex flex-wrap items-center gap-3">
-        <label className="flex min-h-11 items-center gap-2">
-          <input
-            type="checkbox"
-            checked={housing}
-            onChange={(e) => setHousing(e.target.checked)}
-            className="size-5 accent-brand-700"
-          />
-          {t("housing")}
-        </label>
-        <Input
-          type="number"
-          inputMode="numeric"
-          min="0"
-          step="5000"
-          value={salary}
-          onChange={(e) => setSalary(e.target.value)}
-          placeholder={t("salary")}
-          aria-label={t("salary")}
-          className="flex-1 sm:max-w-56"
-        />
+      <div className="flex flex-wrap items-center gap-x-5">
+        <Checkbox checked={housing} onChange={setHousing} label={t("housing")} />
+        <Checkbox checked={foreign} onChange={setForeign} label={t("foreign")} />
       </div>
+      <Input
+        type="number"
+        inputMode="numeric"
+        min="0"
+        step="5000"
+        value={salary}
+        onChange={(e) => setSalary(e.target.value)}
+        placeholder={t("salary")}
+        aria-label={t("salary")}
+      />
       <Button type="submit" disabled={pending}>
         <Search size={18} aria-hidden="true" />
         {pending ? t("searching") : t("submit")}
       </Button>
     </form>
+  );
+}
+
+function Checkbox({ checked, onChange, label }) {
+  return (
+    <label className="flex min-h-11 items-center gap-2">
+      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} className="size-5 accent-brand-700" />
+      {label}
+    </label>
   );
 }

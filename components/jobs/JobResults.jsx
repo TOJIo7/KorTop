@@ -27,18 +27,26 @@ export default async function JobResults({ filters }) {
 
   if (total === 0) return <EmptyState canReset={hasActiveFilters(filters)} />;
 
+  // Зарплату и «берут иностранцев» отбираем сами из страницы на 100 вакансий
+  const filtering = Boolean(filters.salary || filters.foreign);
+
   return (
     <div className="flex flex-col gap-3">
       <p className="text-slate-600">
         {t("found", { count: formatNumber(total, locale) })} · {t("dataAt", { date: formatDateTime(fetchedAt, locale) })}
       </p>
-      {filters.salary && (
+      {filtering && (
         <p className="rounded-xl bg-accent-100 p-3 text-accent-800">
-          {t("salaryNote", { value: formatRub(filters.salary, locale) })}
+          {t("filterNote", { shown: jobs.length, size: pageSize })}
+          {filters.salary && ` ${t("salaryFilter", { value: formatRub(filters.salary, locale) })}`}
         </p>
       )}
       {jobs.length === 0 ? (
-        <EmptyState canReset />
+        filtering && totalPages > filters.page ? (
+          <p className="rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center text-slate-600">{t("noneOnPage")}</p>
+        ) : (
+          <EmptyState canReset />
+        )
       ) : (
         <ul className="flex flex-col gap-3">
           {jobs.map((job) => (

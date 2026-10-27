@@ -12,7 +12,7 @@ import FreshJobs from "@/components/home/FreshJobs";
 import TicketTeaser, { Teaser } from "@/components/home/TicketTeaser";
 import Skeleton from "@/components/ui/Skeleton";
 
-const EMPTY_FILTERS = { text: "", region: "", housing: false, salary: null };
+const EMPTY_FILTERS = { text: "", region: "", housing: false, foreign: false, salary: null };
 
 export default async function HomePage({ params }) {
   const { locale } = await params;
