@@ -7,10 +7,13 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "../globals.css";
 
-// cyrillic-ext нужен для таджикских букв: ҷ ҳ ӣ ӯ қ ғ
+// cyrillic-ext нужен для таджикских букв: ҷ ҳ ӣ ӯ қ ғ.
+// display: optional — на медленном интернете остаёмся на системном шрифте,
+// чтобы текст не перерисовывался после загрузки шрифта (быстрее первый экран)
 const inter = Inter({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
   variable: "--font-inter",
+  display: "optional",
 });
 
 // Обе версии сайта (/tg и /ru) собираются заранее

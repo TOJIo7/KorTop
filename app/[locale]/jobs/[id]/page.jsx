@@ -7,6 +7,7 @@ import { findRegionByTrudvsemCode } from "@/lib/regions";
 import { getRateOrNull } from "@/lib/safeRate";
 import JobDetails from "@/components/jobs/JobDetails";
 import SavedJobFallback from "@/components/jobs/SavedJobFallback";
+import ShareButtons from "@/components/jobs/ShareButtons";
 import CalculatorWithRate from "@/components/patent/CalculatorWithRate";
 import ErrorState from "@/components/ui/ErrorState";
 import Skeleton from "@/components/ui/Skeleton";
@@ -64,6 +65,7 @@ async function JobContent({ id }) {
   return (
     <>
       <JobDetails job={job} rate={rate} />
+      <ShareButtons title={job.title} />
       {/* P-4: калькулятор сразу заполнен зарплатой и регионом этой вакансии */}
       <Suspense fallback={<Skeleton className="h-96 w-full" />}>
         <CalculatorWithRate

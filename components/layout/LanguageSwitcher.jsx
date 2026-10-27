@@ -27,7 +27,7 @@ export default function LanguageSwitcher() {
           type="button"
           onClick={() => switchTo(l)}
           aria-pressed={l === locale}
-          className={`min-h-10 min-w-11 rounded-lg px-2 text-sm font-bold ${
+          className={`min-h-11 min-w-11 rounded-lg px-2 text-sm font-bold ${
             l === locale ? "bg-brand-700 text-white" : "text-slate-700"
           }`}
         >
