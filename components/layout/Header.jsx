@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import NavLinks from "./NavLinks";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
+import FavoritesLink from "./FavoritesLink";
 
 export default function Header() {
   const t = useTranslations("header");
@@ -16,6 +17,7 @@ export default function Header() {
         <nav className="hidden lg:block">
           <NavLinks />
         </nav>
+        <FavoritesLink />
         <LanguageSwitcher />
         <MobileMenu />
       </div>

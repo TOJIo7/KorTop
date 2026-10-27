@@ -1,8 +1,21 @@
-import { setRequestLocale } from "next-intl/server";
-import ComingSoon from "@/components/layout/ComingSoon";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import FavoritesList from "@/components/jobs/FavoritesList";
 
-export default async function Page({ params }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.favorites" });
+  return { title: t("title") };
+}
+
+export default async function FavoritesPage({ params }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ComingSoon page="favorites" />;
+  const t = await getTranslations("pages.favorites");
+
+  return (
+    <div className="flex flex-col gap-4">
+      <h1 className="text-2xl font-bold">{t("title")}</h1>
+      <FavoritesList />
+    </div>
+  );
 }

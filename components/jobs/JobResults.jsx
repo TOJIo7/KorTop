@@ -4,6 +4,7 @@ import { formatDateTime, formatNumber, formatRub } from "@/lib/format";
 import { hasActiveFilters } from "@/lib/jobFilters";
 import ErrorState from "@/components/ui/ErrorState";
 import JobCard from "./JobCard";
+import FavoriteButton from "./FavoriteButton";
 import EmptyState from "./EmptyState";
 import Pagination from "./Pagination";
 
@@ -40,7 +41,7 @@ export default async function JobResults({ filters }) {
         <ul className="flex flex-col gap-3">
           {jobs.map((job) => (
             <li key={job.id}>
-              <JobCard job={job} />
+              <JobCard job={job} action={<FavoriteButton job={job} />} />
             </li>
           ))}
         </ul>
