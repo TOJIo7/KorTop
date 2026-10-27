@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Два цвета проекта: бирюзовый (основной) и янтарный (акцент: цены, метки) */
+@theme {
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-brand-800: #115e59;
+  --color-accent-100: #fef3c7;
+  --color-accent-500: #f59e0b;
+  --color-accent-800: #92400e;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-size: 16px;
+  background: #f8fafc;
+  color: #0f172a;
 }
