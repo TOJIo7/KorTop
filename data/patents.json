@@ -23,6 +23,86 @@
       "law": "Закон Московской области от 26.11.2025 № 213/2025-ОЗ",
       "source": "https://www.garant.ru/hotlaw/mos_obl/1942393/",
       "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "16",
+      "monthly": 8697,
+      "coefficient": 2.55,
+      "law": "Закон Республики Татарстан от 30.09.2025 № 61-ЗРТ",
+      "source": "https://www.garant.ru/hotlaw/tatarstan/1884973/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "23",
+      "monthly": 27283,
+      "coefficient": 8,
+      "law": "Закон Краснодарского края от 30.10.2025 № 5422-КЗ",
+      "source": "https://www.garant.ru/hotlaw/krasnodar/1910467/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "89",
+      "monthly": 18505,
+      "coefficient": 5.426,
+      "law": "Закон Ямало-Ненецкого АО от 20.11.2025 № 83-ЗАО",
+      "source": "https://www.garant.ru/hotlaw/yamalonenecky/1923453/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "18",
+      "monthly": 8287,
+      "coefficient": 2.43,
+      "law": "Закон Удмуртской Республики от 30.10.2025 № 62-РЗ",
+      "source": "https://www.garant.ru/hotlaw/udmurtia/1910673/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "76",
+      "monthly": 10981,
+      "coefficient": 3.22,
+      "law": "Закон Ярославской области от 11.11.2025 № 52-з",
+      "source": "https://www.garant.ru/hotlaw/yaroslavl/1919297/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "10",
+      "monthly": 11595,
+      "coefficient": 3.4,
+      "law": "Закон Республики Карелия от 23.10.2025 № 3111-ЗРК",
+      "source": "https://www.garant.ru/hotlaw/karelia/1910586/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "43",
+      "monthly": 7912,
+      "coefficient": 2.32,
+      "law": "Закон Кировской области от 26.11.2025 № 440-ЗО",
+      "source": "https://www.garant.ru/hotlaw/kyrov/1941973/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "32",
+      "monthly": 9741,
+      "coefficient": 2.85626,
+      "law": "Закон Брянской области от 28.11.2025 № 92-З",
+      "source": "https://www.garant.ru/hotlaw/briansk/1941642/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "01",
+      "monthly": 8185,
+      "coefficient": 2.4,
+      "law": "Закон Республики Адыгея от 06.11.2025 № 467",
+      "source": "https://www.garant.ru/hotlaw/adygeia/1919006/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "06",
+      "monthly": 6684,
+      "coefficient": 1.96,
+      "law": "Закон Республики Ингушетия от 28.11.2025 № 34-РЗ",
+      "source": "https://www.garant.ru/hotlaw/ingush/1959338/",
+      "checkedAt": "2026-10-27"
     }
   ]
 }
