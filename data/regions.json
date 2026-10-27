@@ -1,0 +1,857 @@
+{
+  "source": "https://opendata.trudvsem.ru/api/v1/vacancies/region/{trudvsemCode}",
+  "note": "Коды регионов trudvsem = код субъекта по КЛАДР + 11 нулей (проверено: Москва 7700000000000, Самарская обл. 6300000000000). Аэропорт — код IATA города для Aviasales; null — нет действующего аэропорта с регулярными рейсами.",
+  "checkedAt": "2026-10-27",
+  "regions": [
+    {
+      "id": "77",
+      "name": {
+        "ru": "Москва",
+        "tg": "Маскав"
+      },
+      "trudvsemCode": "7700000000000",
+      "airport": "MOW",
+      "popular": true
+    },
+    {
+      "id": "50",
+      "name": {
+        "ru": "Московская область",
+        "tg": "Вилояти Маскав"
+      },
+      "trudvsemCode": "5000000000000",
+      "airport": "MOW",
+      "popular": true
+    },
+    {
+      "id": "78",
+      "name": {
+        "ru": "Санкт-Петербург",
+        "tg": "Санкт-Петербург"
+      },
+      "trudvsemCode": "7800000000000",
+      "airport": "LED",
+      "popular": true
+    },
+    {
+      "id": "47",
+      "name": {
+        "ru": "Ленинградская область",
+        "tg": "Вилояти Ленинград"
+      },
+      "trudvsemCode": "4700000000000",
+      "airport": "LED",
+      "popular": true
+    },
+    {
+      "id": "66",
+      "name": {
+        "ru": "Свердловская область",
+        "tg": "Вилояти Свердловск"
+      },
+      "trudvsemCode": "6600000000000",
+      "airport": "SVX",
+      "popular": true
+    },
+    {
+      "id": "16",
+      "name": {
+        "ru": "Республика Татарстан",
+        "tg": "Ҷумҳурии Тоторстон"
+      },
+      "trudvsemCode": "1600000000000",
+      "airport": "KZN",
+      "popular": true
+    },
+    {
+      "id": "54",
+      "name": {
+        "ru": "Новосибирская область",
+        "tg": "Вилояти Новосибирск"
+      },
+      "trudvsemCode": "5400000000000",
+      "airport": "OVB",
+      "popular": true
+    },
+    {
+      "id": "23",
+      "name": {
+        "ru": "Краснодарский край",
+        "tg": "Кишвари Краснодар"
+      },
+      "trudvsemCode": "2300000000000",
+      "airport": "KRR",
+      "popular": true
+    },
+    {
+      "id": "63",
+      "name": {
+        "ru": "Самарская область",
+        "tg": "Вилояти Самара"
+      },
+      "trudvsemCode": "6300000000000",
+      "airport": "KUF",
+      "popular": true
+    },
+    {
+      "id": "52",
+      "name": {
+        "ru": "Нижегородская область",
+        "tg": "Вилояти Нижний Новгород"
+      },
+      "trudvsemCode": "5200000000000",
+      "airport": "GOJ",
+      "popular": true
+    },
+    {
+      "id": "72",
+      "name": {
+        "ru": "Тюменская область",
+        "tg": "Вилояти Тюмен"
+      },
+      "trudvsemCode": "7200000000000",
+      "airport": "TJM",
+      "popular": true
+    },
+    {
+      "id": "86",
+      "name": {
+        "ru": "Ханты-Мансийский АО — Югра",
+        "tg": "Округи мухтори Ханти-Мансӣ — Югра"
+      },
+      "trudvsemCode": "8600000000000",
+      "airport": "SGC",
+      "popular": true
+    },
+    {
+      "id": "24",
+      "name": {
+        "ru": "Красноярский край",
+        "tg": "Кишвари Красноярск"
+      },
+      "trudvsemCode": "2400000000000",
+      "airport": "KJA",
+      "popular": false
+    },
+    {
+      "id": "74",
+      "name": {
+        "ru": "Челябинская область",
+        "tg": "Вилояти Челябинск"
+      },
+      "trudvsemCode": "7400000000000",
+      "airport": "CEK",
+      "popular": false
+    },
+    {
+      "id": "02",
+      "name": {
+        "ru": "Республика Башкортостан",
+        "tg": "Ҷумҳурии Бошқирдистон"
+      },
+      "trudvsemCode": "0200000000000",
+      "airport": "UFA",
+      "popular": false
+    },
+    {
+      "id": "61",
+      "name": {
+        "ru": "Ростовская область",
+        "tg": "Вилояти Ростов"
+      },
+      "trudvsemCode": "6100000000000",
+      "airport": "ROV",
+      "popular": false
+    },
+    {
+      "id": "59",
+      "name": {
+        "ru": "Пермский край",
+        "tg": "Кишвари Перм"
+      },
+      "trudvsemCode": "5900000000000",
+      "airport": "PEE",
+      "popular": false
+    },
+    {
+      "id": "34",
+      "name": {
+        "ru": "Волгоградская область",
+        "tg": "Вилояти Волгоград"
+      },
+      "trudvsemCode": "3400000000000",
+      "airport": "VOG",
+      "popular": false
+    },
+    {
+      "id": "36",
+      "name": {
+        "ru": "Воронежская область",
+        "tg": "Вилояти Воронеж"
+      },
+      "trudvsemCode": "3600000000000",
+      "airport": "VOZ",
+      "popular": false
+    },
+    {
+      "id": "55",
+      "name": {
+        "ru": "Омская область",
+        "tg": "Вилояти Омск"
+      },
+      "trudvsemCode": "5500000000000",
+      "airport": "OMS",
+      "popular": false
+    },
+    {
+      "id": "38",
+      "name": {
+        "ru": "Иркутская область",
+        "tg": "Вилояти Иркутск"
+      },
+      "trudvsemCode": "3800000000000",
+      "airport": "IKT",
+      "popular": false
+    },
+    {
+      "id": "25",
+      "name": {
+        "ru": "Приморский край",
+        "tg": "Кишвари Приморье"
+      },
+      "trudvsemCode": "2500000000000",
+      "airport": "VVO",
+      "popular": false
+    },
+    {
+      "id": "27",
+      "name": {
+        "ru": "Хабаровский край",
+        "tg": "Кишвари Хабаровск"
+      },
+      "trudvsemCode": "2700000000000",
+      "airport": "KHV",
+      "popular": false
+    },
+    {
+      "id": "14",
+      "name": {
+        "ru": "Республика Саха (Якутия)",
+        "tg": "Ҷумҳурии Саха (Якутия)"
+      },
+      "trudvsemCode": "1400000000000",
+      "airport": "YKS",
+      "popular": false
+    },
+    {
+      "id": "39",
+      "name": {
+        "ru": "Калининградская область",
+        "tg": "Вилояти Калининград"
+      },
+      "trudvsemCode": "3900000000000",
+      "airport": "KGD",
+      "popular": false
+    },
+    {
+      "id": "89",
+      "name": {
+        "ru": "Ямало-Ненецкий АО",
+        "tg": "Округи мухтори Ямалу Ненетс"
+      },
+      "trudvsemCode": "8900000000000",
+      "airport": "NUX",
+      "popular": false
+    },
+    {
+      "id": "05",
+      "name": {
+        "ru": "Республика Дагестан",
+        "tg": "Ҷумҳурии Доғистон"
+      },
+      "trudvsemCode": "0500000000000",
+      "airport": "MCX",
+      "popular": false
+    },
+    {
+      "id": "26",
+      "name": {
+        "ru": "Ставропольский край",
+        "tg": "Кишвари Ставропол"
+      },
+      "trudvsemCode": "2600000000000",
+      "airport": "MRV",
+      "popular": false
+    },
+    {
+      "id": "22",
+      "name": {
+        "ru": "Алтайский край",
+        "tg": "Кишвари Олтой"
+      },
+      "trudvsemCode": "2200000000000",
+      "airport": "BAX",
+      "popular": false
+    },
+    {
+      "id": "42",
+      "name": {
+        "ru": "Кемеровская область — Кузбасс",
+        "tg": "Вилояти Кемерово — Кузбасс"
+      },
+      "trudvsemCode": "4200000000000",
+      "airport": "KEJ",
+      "popular": false
+    },
+    {
+      "id": "70",
+      "name": {
+        "ru": "Томская область",
+        "tg": "Вилояти Томск"
+      },
+      "trudvsemCode": "7000000000000",
+      "airport": "TOF",
+      "popular": false
+    },
+    {
+      "id": "56",
+      "name": {
+        "ru": "Оренбургская область",
+        "tg": "Вилояти Оренбург"
+      },
+      "trudvsemCode": "5600000000000",
+      "airport": "REN",
+      "popular": false
+    },
+    {
+      "id": "64",
+      "name": {
+        "ru": "Саратовская область",
+        "tg": "Вилояти Саратов"
+      },
+      "trudvsemCode": "6400000000000",
+      "airport": "GSV",
+      "popular": false
+    },
+    {
+      "id": "73",
+      "name": {
+        "ru": "Ульяновская область",
+        "tg": "Вилояти Уляновск"
+      },
+      "trudvsemCode": "7300000000000",
+      "airport": "ULV",
+      "popular": false
+    },
+    {
+      "id": "58",
+      "name": {
+        "ru": "Пензенская область",
+        "tg": "Вилояти Пенза"
+      },
+      "trudvsemCode": "5800000000000",
+      "airport": "PEZ",
+      "popular": false
+    },
+    {
+      "id": "13",
+      "name": {
+        "ru": "Республика Мордовия",
+        "tg": "Ҷумҳурии Мордовия"
+      },
+      "trudvsemCode": "1300000000000",
+      "airport": "SKX",
+      "popular": false
+    },
+    {
+      "id": "21",
+      "name": {
+        "ru": "Чувашская Республика",
+        "tg": "Ҷумҳурии Чувашия"
+      },
+      "trudvsemCode": "2100000000000",
+      "airport": "CSY",
+      "popular": false
+    },
+    {
+      "id": "18",
+      "name": {
+        "ru": "Удмуртская Республика",
+        "tg": "Ҷумҳурии Удмуртия"
+      },
+      "trudvsemCode": "1800000000000",
+      "airport": "IJK",
+      "popular": false
+    },
+    {
+      "id": "43",
+      "name": {
+        "ru": "Кировская область",
+        "tg": "Вилояти Киров"
+      },
+      "trudvsemCode": "4300000000000",
+      "airport": "KVX",
+      "popular": false
+    },
+    {
+      "id": "30",
+      "name": {
+        "ru": "Астраханская область",
+        "tg": "Вилояти Астрахан"
+      },
+      "trudvsemCode": "3000000000000",
+      "airport": "ASF",
+      "popular": false
+    },
+    {
+      "id": "51",
+      "name": {
+        "ru": "Мурманская область",
+        "tg": "Вилояти Мурманск"
+      },
+      "trudvsemCode": "5100000000000",
+      "airport": "MMK",
+      "popular": false
+    },
+    {
+      "id": "29",
+      "name": {
+        "ru": "Архангельская область",
+        "tg": "Вилояти Архангелск"
+      },
+      "trudvsemCode": "2900000000000",
+      "airport": "ARH",
+      "popular": false
+    },
+    {
+      "id": "11",
+      "name": {
+        "ru": "Республика Коми",
+        "tg": "Ҷумҳурии Коми"
+      },
+      "trudvsemCode": "1100000000000",
+      "airport": "SCW",
+      "popular": false
+    },
+    {
+      "id": "03",
+      "name": {
+        "ru": "Республика Бурятия",
+        "tg": "Ҷумҳурии Бурятия"
+      },
+      "trudvsemCode": "0300000000000",
+      "airport": "UUD",
+      "popular": false
+    },
+    {
+      "id": "75",
+      "name": {
+        "ru": "Забайкальский край",
+        "tg": "Кишвари Забайкалье"
+      },
+      "trudvsemCode": "7500000000000",
+      "airport": "HTA",
+      "popular": false
+    },
+    {
+      "id": "28",
+      "name": {
+        "ru": "Амурская область",
+        "tg": "Вилояти Амур"
+      },
+      "trudvsemCode": "2800000000000",
+      "airport": "BQS",
+      "popular": false
+    },
+    {
+      "id": "65",
+      "name": {
+        "ru": "Сахалинская область",
+        "tg": "Вилояти Сахалин"
+      },
+      "trudvsemCode": "6500000000000",
+      "airport": "UUS",
+      "popular": false
+    },
+    {
+      "id": "41",
+      "name": {
+        "ru": "Камчатский край",
+        "tg": "Кишвари Камчатка"
+      },
+      "trudvsemCode": "4100000000000",
+      "airport": "PKC",
+      "popular": false
+    },
+    {
+      "id": "49",
+      "name": {
+        "ru": "Магаданская область",
+        "tg": "Вилояти Магадан"
+      },
+      "trudvsemCode": "4900000000000",
+      "airport": "GDX",
+      "popular": false
+    },
+    {
+      "id": "76",
+      "name": {
+        "ru": "Ярославская область",
+        "tg": "Вилояти Ярославл"
+      },
+      "trudvsemCode": "7600000000000",
+      "airport": "IAR",
+      "popular": false
+    },
+    {
+      "id": "40",
+      "name": {
+        "ru": "Калужская область",
+        "tg": "Вилояти Калуга"
+      },
+      "trudvsemCode": "4000000000000",
+      "airport": "KLF",
+      "popular": false
+    },
+    {
+      "id": "37",
+      "name": {
+        "ru": "Ивановская область",
+        "tg": "Вилояти Иваново"
+      },
+      "trudvsemCode": "3700000000000",
+      "airport": "IWA",
+      "popular": false
+    },
+    {
+      "id": "45",
+      "name": {
+        "ru": "Курганская область",
+        "tg": "Вилояти Курган"
+      },
+      "trudvsemCode": "4500000000000",
+      "airport": "KRO",
+      "popular": false
+    },
+    {
+      "id": "15",
+      "name": {
+        "ru": "Республика Северная Осетия — Алания",
+        "tg": "Ҷумҳурии Осетияи Шимолӣ — Алания"
+      },
+      "trudvsemCode": "1500000000000",
+      "airport": "OGZ",
+      "popular": false
+    },
+    {
+      "id": "20",
+      "name": {
+        "ru": "Чеченская Республика",
+        "tg": "Ҷумҳурии Чечения"
+      },
+      "trudvsemCode": "2000000000000",
+      "airport": "GRV",
+      "popular": false
+    },
+    {
+      "id": "06",
+      "name": {
+        "ru": "Республика Ингушетия",
+        "tg": "Ҷумҳурии Ингушетия"
+      },
+      "trudvsemCode": "0600000000000",
+      "airport": "IGT",
+      "popular": false
+    },
+    {
+      "id": "07",
+      "name": {
+        "ru": "Кабардино-Балкарская Республика",
+        "tg": "Ҷумҳурии Кабардину Балкария"
+      },
+      "trudvsemCode": "0700000000000",
+      "airport": "NAL",
+      "popular": false
+    },
+    {
+      "id": "19",
+      "name": {
+        "ru": "Республика Хакасия",
+        "tg": "Ҷумҳурии Хакасия"
+      },
+      "trudvsemCode": "1900000000000",
+      "airport": "ABA",
+      "popular": false
+    },
+    {
+      "id": "17",
+      "name": {
+        "ru": "Республика Тыва",
+        "tg": "Ҷумҳурии Тува"
+      },
+      "trudvsemCode": "1700000000000",
+      "airport": "KYZ",
+      "popular": false
+    },
+    {
+      "id": "10",
+      "name": {
+        "ru": "Республика Карелия",
+        "tg": "Ҷумҳурии Карелия"
+      },
+      "trudvsemCode": "1000000000000",
+      "airport": "PES",
+      "popular": false
+    },
+    {
+      "id": "35",
+      "name": {
+        "ru": "Вологодская область",
+        "tg": "Вилояти Вологда"
+      },
+      "trudvsemCode": "3500000000000",
+      "airport": "CEE",
+      "popular": false
+    },
+    {
+      "id": "60",
+      "name": {
+        "ru": "Псковская область",
+        "tg": "Вилояти Псков"
+      },
+      "trudvsemCode": "6000000000000",
+      "airport": "PKV",
+      "popular": false
+    },
+    {
+      "id": "31",
+      "name": {
+        "ru": "Белгородская область",
+        "tg": "Вилояти Белгород"
+      },
+      "trudvsemCode": "3100000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "32",
+      "name": {
+        "ru": "Брянская область",
+        "tg": "Вилояти Брянск"
+      },
+      "trudvsemCode": "3200000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "46",
+      "name": {
+        "ru": "Курская область",
+        "tg": "Вилояти Курск"
+      },
+      "trudvsemCode": "4600000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "48",
+      "name": {
+        "ru": "Липецкая область",
+        "tg": "Вилояти Липетск"
+      },
+      "trudvsemCode": "4800000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "08",
+      "name": {
+        "ru": "Республика Калмыкия",
+        "tg": "Ҷумҳурии Қалмиқия"
+      },
+      "trudvsemCode": "0800000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "91",
+      "name": {
+        "ru": "Республика Крым",
+        "tg": "Ҷумҳурии Қрим"
+      },
+      "trudvsemCode": "9100000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "92",
+      "name": {
+        "ru": "Севастополь",
+        "tg": "Севастопол"
+      },
+      "trudvsemCode": "9200000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "01",
+      "name": {
+        "ru": "Республика Адыгея",
+        "tg": "Ҷумҳурии Адигея"
+      },
+      "trudvsemCode": "0100000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "04",
+      "name": {
+        "ru": "Республика Алтай",
+        "tg": "Ҷумҳурии Олтой"
+      },
+      "trudvsemCode": "0400000000000",
+      "airport": "RGK",
+      "popular": false
+    },
+    {
+      "id": "09",
+      "name": {
+        "ru": "Карачаево-Черкесская Республика",
+        "tg": "Ҷумҳурии Қарачай-Черкесия"
+      },
+      "trudvsemCode": "0900000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "12",
+      "name": {
+        "ru": "Республика Марий Эл",
+        "tg": "Ҷумҳурии Марий Эл"
+      },
+      "trudvsemCode": "1200000000000",
+      "airport": "JOK",
+      "popular": false
+    },
+    {
+      "id": "33",
+      "name": {
+        "ru": "Владимирская область",
+        "tg": "Вилояти Владимир"
+      },
+      "trudvsemCode": "3300000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "44",
+      "name": {
+        "ru": "Костромская область",
+        "tg": "Вилояти Кострома"
+      },
+      "trudvsemCode": "4400000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "53",
+      "name": {
+        "ru": "Новгородская область",
+        "tg": "Вилояти Новгород"
+      },
+      "trudvsemCode": "5300000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "57",
+      "name": {
+        "ru": "Орловская область",
+        "tg": "Вилояти Орёл"
+      },
+      "trudvsemCode": "5700000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "62",
+      "name": {
+        "ru": "Рязанская область",
+        "tg": "Вилояти Рязан"
+      },
+      "trudvsemCode": "6200000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "67",
+      "name": {
+        "ru": "Смоленская область",
+        "tg": "Вилояти Смоленск"
+      },
+      "trudvsemCode": "6700000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "68",
+      "name": {
+        "ru": "Тамбовская область",
+        "tg": "Вилояти Тамбов"
+      },
+      "trudvsemCode": "6800000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "69",
+      "name": {
+        "ru": "Тверская область",
+        "tg": "Вилояти Твер"
+      },
+      "trudvsemCode": "6900000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "71",
+      "name": {
+        "ru": "Тульская область",
+        "tg": "Вилояти Тула"
+      },
+      "trudvsemCode": "7100000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "79",
+      "name": {
+        "ru": "Еврейская автономная область",
+        "tg": "Вилояти мухтори Яҳудӣ"
+      },
+      "trudvsemCode": "7900000000000",
+      "airport": null,
+      "popular": false
+    },
+    {
+      "id": "83",
+      "name": {
+        "ru": "Ненецкий АО",
+        "tg": "Округи мухтори Ненетс"
+      },
+      "trudvsemCode": "8300000000000",
+      "airport": "NNM",
+      "popular": false
+    },
+    {
+      "id": "87",
+      "name": {
+        "ru": "Чукотский АО",
+        "tg": "Округи мухтори Чукотка"
+      },
+      "trudvsemCode": "8700000000000",
+      "airport": "DYR",
+      "popular": false
+    }
+  ]
+}

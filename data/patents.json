@@ -1,0 +1,28 @@
+{
+  "year": 2026,
+  "formula": {
+    "base": 1200,
+    "deflator": 2.842,
+    "deflatorSource": "https://blog.mmc.help/soiskateli/avansovyy-platezh-za-patent-inostrannogo-grazhdanina-v-2026-godu-chto-eto-takoe-kto-i-kogda-platit-formula-i-primery-rascheta/",
+    "note": "Патент в месяц = 1 200 ₽ × дефлятор (2,842 на 2026 год, приказ Минэкономразвития от 06.11.2025 № 734) × региональный коэффициент из закона субъекта. Если регион не установил коэффициент, он равен 1.",
+    "checkedAt": "2026-10-27"
+  },
+  "items": [
+    {
+      "regionId": "77",
+      "monthly": 10000,
+      "coefficient": 2.9323,
+      "law": "Закон г. Москвы от 01.11.2025 № 41",
+      "source": "https://www.garant.ru/news/1905664/",
+      "checkedAt": "2026-10-27"
+    },
+    {
+      "regionId": "50",
+      "monthly": 10000,
+      "coefficient": 2.9323,
+      "law": "Закон Московской области от 26.11.2025 № 213/2025-ОЗ",
+      "source": "https://www.garant.ru/hotlaw/mos_obl/1942393/",
+      "checkedAt": "2026-10-27"
+    }
+  ]
+}
