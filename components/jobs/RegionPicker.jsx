@@ -35,7 +35,7 @@ export default function RegionPicker({ value, onChange }) {
         type="button"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="flex min-h-11 w-full items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 text-left"
+        className="flex min-h-11 w-full items-center gap-2 rounded-lg border border-slate-300 bg-card px-3 text-left"
       >
         <MapPin size={18} className="shrink-0 text-slate-500" aria-hidden="true" />
         <span className="flex-1 truncate">{selected ? regionName(selected, locale) : t("allRegions")}</span>
@@ -43,7 +43,7 @@ export default function RegionPicker({ value, onChange }) {
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-full z-30 mt-1 rounded-xl border border-slate-200 bg-white p-2 shadow-lg">
+        <div className="absolute inset-x-0 top-full z-30 mt-1 rounded-lg border border-slate-200 bg-card p-2 shadow-lg">
           <Input
             autoFocus
             value={query}

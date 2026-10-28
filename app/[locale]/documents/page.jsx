@@ -31,10 +31,10 @@ export default async function DocumentsPage({ params }) {
   }));
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">{tPage("title")}</h1>
+    <div className="flex flex-col gap-6">
+      <h1 className="text-[28px] leading-tight sm:text-4xl">{tPage("title")}</h1>
       {/* D-3: правила меняются */}
-      <div role="note" className="flex gap-3 rounded-2xl bg-accent-100 p-4 text-accent-800">
+      <div role="note" className="flex gap-3 rounded-lg border border-accent-300 bg-accent-100 p-4 text-accent-800">
         <TriangleAlert size={24} className="shrink-0" aria-hidden="true" />
         <p>{t("banner", { date: formatDate(documents.checkedAt, locale) })}</p>
       </div>

@@ -1,24 +1,127 @@
 @import "tailwindcss";
 
-/* Два цвета проекта: бирюзовый (основной) и янтарный (акцент: цены, метки) */
+/*
+  Палитра из таджикской сюзане:
+  индиго — доверие и действия, шафран — цены и акценты, гранат — логотип и орнамент.
+  Фон — тёплая бумага вместо холодного серого.
+*/
 @theme {
-  --color-brand-50: #f0fdfa;
-  --color-brand-100: #ccfbf1;
-  --color-brand-600: #0d9488;
-  --color-brand-700: #0f766e;
-  --color-brand-800: #115e59;
-  --color-accent-100: #fef3c7;
-  --color-accent-500: #f59e0b;
-  --color-accent-800: #92400e;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --color-paper: #f6f0e5;
+  --color-card: #fffcf6;
+  --color-line: #e2d7c3;
+
+  /* Тёплые нейтральные вместо холодного slate: весь серый текст на сайте становится «бумажным» */
+  --color-slate-50: #faf6ee;
+  --color-slate-100: #f1eadc;
+  --color-slate-200: #e2d7c3;
+  --color-slate-300: #cfc1a8;
+  --color-slate-400: #a8987c;
+  --color-slate-500: #6e6250;
+  --color-slate-600: #5e5443;
+  --color-slate-700: #463e31;
+  --color-slate-800: #2e2920;
+  --color-slate-900: #1d1a14;
+
+  --color-brand-50: #eef0f8;
+  --color-brand-100: #dce1f1;
+  --color-brand-600: #34479f;
+  --color-brand-700: #283a85;
+  --color-brand-800: #1d2b66;
+  --color-brand-900: #151f4a;
+
+  --color-accent-100: #fbeacb;
+  --color-accent-300: #f2c46f;
+  --color-accent-500: #e49b2f;
+  --color-accent-800: #74470c;
+
+  --color-pom-50: #f9e8e4;
+  --color-pom-600: #b3362b;
+  --color-pom-700: #942a21;
+
+  --font-sans: var(--font-onest), system-ui, sans-serif;
+  --font-display: var(--font-unbounded), var(--font-onest), system-ui, sans-serif;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
+/* В слое base, чтобы классы Tailwind (font-sans, font-bold) могли их переопределить */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    background: var(--color-paper);
+    color: var(--color-slate-900);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: var(--color-accent-300);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent-500);
+    outline-offset: 2px;
+  }
 }
 
-body {
-  font-size: 16px;
-  background: #f8fafc;
-  color: #0f172a;
+/* Карточка: бумажная, с тонкой линией вместо тени */
+@utility card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: 0.625rem;
+}
+
+/* Суммы денег: жирный Onest с ровными цифрами.
+   Не Unbounded — знак ₽ лежит в его наборе latin-ext, и ради одного символа браузер качал бы 117 КБ */
+@utility money {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Маленькая подпись над заголовком */
+@utility eyebrow {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-pom-600);
+}
+
+/* «Билет»: полукруглые вырезы по бокам на уровне перфорации (--notch-y) */
+@utility ticket {
+  --notch-y: 50%;
+  background: var(--color-card);
+  border-radius: 0.875rem;
+  -webkit-mask:
+    radial-gradient(circle 12px at 0 var(--notch-y), #0000 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% var(--notch-y), #0000 98%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 12px at 0 var(--notch-y), #0000 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 12px at 100% var(--notch-y), #0000 98%, #000) right / 51% 100% no-repeat;
+}
+
+/* Маркер-выделение слова в заголовке */
+@utility marker {
+  background: linear-gradient(transparent 58%, var(--color-accent-300) 58%, var(--color-accent-300) 92%, transparent 92%);
+  padding: 0 0.1em;
 }

@@ -34,21 +34,25 @@ export default function PatentCalculator({ initialSalary = "", initialRegion = "
   });
 
   return (
-    <section className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4">
-      <h2 className="flex items-center gap-2 text-lg font-semibold">
-        <Calculator size={22} className="text-brand-700" aria-hidden="true" />
+    <section className="card flex flex-col gap-4 p-5">
+      <h2 className="flex items-center gap-2 text-xl">
+        <Calculator size={22} className="text-pom-600" aria-hidden="true" />
         {t("title")}
       </h2>
 
-      <Row label={t("salary")}>
-        <Input {...field("salary")} />
-      </Row>
-      <Row label={t("region")}>
-        <RegionPicker value={region} onChange={setRegion} />
-      </Row>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Row label={t("salary")}>
+          <Input {...field("salary")} />
+        </Row>
+        <Row label={t("region")}>
+          <RegionPicker value={region} onChange={setRegion} />
+        </Row>
+      </div>
       <Row label={t("patent")}>
         {knownPatent ? (
-          <p className="flex min-h-11 items-center font-semibold">{formatRub(knownPatent.monthly, locale)}</p>
+          <p className="flex min-h-12 items-center rounded-lg bg-accent-100 px-3.5 money text-accent-800">
+            {formatRub(knownPatent.monthly, locale)}
+          </p>
         ) : (
           <>
             <Input {...field("patent")} />
@@ -56,21 +60,23 @@ export default function PatentCalculator({ initialSalary = "", initialRegion = "
           </>
         )}
       </Row>
-      <Row label={t("housing")}>
-        <Input {...field("housing")} />
-      </Row>
-      <Row label={t("food")}>
-        <Input {...field("food")} />
-      </Row>
-      <Row label={t("transport")}>
-        <Input {...field("transport")} />
-      </Row>
+      <div className="grid gap-4 sm:grid-cols-3">
+        <Row label={t("housing")}>
+          <Input {...field("housing")} />
+        </Row>
+        <Row label={t("food")}>
+          <Input {...field("food")} />
+        </Row>
+        <Row label={t("transport")}>
+          <Input {...field("transport")} />
+        </Row>
+      </div>
 
-      <div className={`rounded-xl p-4 ${left >= 0 ? "bg-brand-50" : "bg-red-50"}`} aria-live="polite">
-        <p className="text-slate-700">{t("left")}</p>
-        <p className={`text-2xl font-bold ${left >= 0 ? "text-brand-800" : "text-red-700"}`}>{formatRub(left, locale)}</p>
-        {rate && <p className="text-lg font-semibold text-slate-800">≈ {formatSomoni(left * rate, locale)}</p>}
-        <p className="mt-1 text-sm text-slate-600">{t("formula")}</p>
+      <div className={`rounded-lg p-5 text-white ${left >= 0 ? "bg-brand-900" : "bg-pom-700"}`} aria-live="polite">
+        <p className="text-sm font-bold uppercase tracking-wider text-white/75">{t("left")}</p>
+        <p className="mt-1 money text-[34px] leading-none">{formatRub(left, locale)}</p>
+        {rate && <p className="mt-2 text-lg text-accent-300">≈ {formatSomoni(left * rate, locale)}</p>}
+        <p className="mt-3 border-t border-white/20 pt-3 text-sm text-white/75">{t("formula")}</p>
       </div>
     </section>
   );

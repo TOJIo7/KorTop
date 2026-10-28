@@ -20,15 +20,15 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div role="group" aria-label={t("language")} className="flex rounded-xl border border-slate-300 p-0.5">
+    <div role="group" aria-label={t("language")} className="flex rounded-full border border-line bg-card">
       {routing.locales.map((l) => (
         <button
           key={l}
           type="button"
           onClick={() => switchTo(l)}
           aria-pressed={l === locale}
-          className={`min-h-11 min-w-11 rounded-lg px-2 text-sm font-bold ${
-            l === locale ? "bg-brand-700 text-white" : "text-slate-700"
+          className={`min-h-11 min-w-12 rounded-full px-2 text-sm font-bold tracking-wide transition-colors ${
+            l === locale ? "bg-slate-900 text-paper" : "text-slate-500 hover:text-slate-900"
           }`}
         >
           {labels[l]}

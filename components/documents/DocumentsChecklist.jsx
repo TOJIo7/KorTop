@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { CircleAlert, ExternalLink } from "lucide-react";
+import { Check, CircleAlert, ExternalLink } from "lucide-react";
 import { useChecklist } from "@/hooks/useChecklist";
 
 // Пошаговый чек-лист (D-1) с отметками в браузере (D-2).
@@ -10,24 +10,39 @@ export default function DocumentsChecklist({ steps }) {
   const t = useTranslations("documents");
   const { done, toggle } = useChecklist();
 
+  const doneCount = steps.filter((s) => done.includes(s.id)).length;
+
   return (
-    <div className="flex flex-col gap-3">
-      <p className="font-medium text-slate-700" aria-live="polite">
-        {t("progress", { done: steps.filter((s) => done.includes(s.id)).length, total: steps.length })}
-      </p>
-      <ol className="flex flex-col gap-3">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2" aria-live="polite">
+        <p className="font-medium text-slate-700">{t("progress", { done: doneCount, total: steps.length })}</p>
+        <div className="h-2 overflow-hidden rounded-full bg-slate-200" aria-hidden="true">
+          <div className="h-full rounded-full bg-pom-600 transition-[width] duration-500" style={{ width: `${(doneCount / steps.length) * 100}%` }} />
+        </div>
+      </div>
+      <ol className="flex flex-col">
         {steps.map((step, index) => {
           const checked = done.includes(step.id);
+          const last = index === steps.length - 1;
           return (
-            <li key={step.id} className={`rounded-2xl border bg-white p-4 ${checked ? "border-brand-600" : "border-slate-200"}`}>
-              <label className="flex cursor-pointer items-start gap-3">
-                <input type="checkbox" checked={checked} onChange={() => toggle(step.id)} className="mt-1 size-6 shrink-0 accent-brand-700" />
-                <span className={`text-lg font-semibold ${checked ? "text-slate-500 line-through" : ""}`}>
-                  {index + 1}. {step.title}
+            <li key={step.id} className="relative flex gap-4 pb-5">
+              {/* Линия пути между кружками */}
+              {!last && <span className="absolute bottom-0 left-5.25 top-12 w-0.5 bg-line" aria-hidden="true" />}
+              <label className="relative shrink-0 cursor-pointer">
+                <input type="checkbox" checked={checked} onChange={() => toggle(step.id)} className="peer sr-only" />
+                <span
+                  className={`flex size-11 items-center justify-center rounded-full border-2 font-display font-bold transition-colors peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent-500 ${
+                    checked ? "border-pom-600 bg-pom-600 text-white" : "border-slate-300 bg-card text-slate-700 hover:border-slate-900"
+                  }`}
+                >
+                  {checked ? <Check size={22} strokeWidth={3} aria-hidden="true" /> : index + 1}
                 </span>
+                <span className="sr-only">{step.title}</span>
               </label>
+              <div className="card min-w-0 flex-1 p-4">
+              <h2 className={`font-sans text-lg font-semibold leading-snug ${checked ? "text-slate-500 line-through" : ""}`}>{step.title}</h2>
               <p className="mt-2 text-slate-800">{step.text}</p>
-              <dl className="mt-3 grid gap-2 text-sm sm:grid-cols-3">
+              <dl className="mt-3 grid gap-2 border-t border-line pt-3 text-sm sm:grid-cols-3">
                 <Fact label={t("where")} value={step.where} />
                 <Fact label={t("deadline")} value={step.deadline} />
                 <Fact label={t("cost")} value={step.cost ?? t("costUnknown")} />
@@ -43,6 +58,7 @@ export default function DocumentsChecklist({ steps }) {
                     <CircleAlert size={16} aria-hidden="true" /> {t("notVerified")}
                   </span>
                 )}
+              </div>
               </div>
             </li>
           );

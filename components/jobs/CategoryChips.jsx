@@ -9,8 +9,8 @@ export default function CategoryChips({ filters = {} }) {
 
   return (
     <div>
-      <h2 className="mb-2 font-semibold text-slate-700">{t("title")}</h2>
-      <ul className="flex gap-2 overflow-x-auto pb-1">
+      <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wider text-slate-500">{t("title")}</h2>
+      <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
         {categories.map(({ key, query, Icon }) => {
           const active = filters.text === query;
           const href = { pathname: "/jobs", query: toJobsQuery({ ...filters, text: query, page: 1 }) };
@@ -19,8 +19,8 @@ export default function CategoryChips({ filters = {} }) {
               <Link
                 href={href}
                 aria-current={active ? "true" : undefined}
-                className={`flex min-h-11 items-center gap-2 rounded-full border px-4 font-medium ${
-                  active ? "border-brand-700 bg-brand-700 text-white" : "border-slate-300 bg-white text-slate-800 hover:bg-slate-50"
+                className={`flex min-h-11 items-center gap-2 rounded-full border px-4 font-medium transition-colors ${
+                  active ? "border-slate-900 bg-slate-900 text-paper" : "border-slate-300 bg-card text-slate-800 hover:border-slate-900"
                 }`}
               >
                 <Icon size={18} aria-hidden="true" />

@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { searchJobs } from "@/lib/trudvsem";
 import JobCard from "@/components/jobs/JobCard";
+import JobList from "@/components/jobs/JobList";
 
 const COUNT = 6;
 
@@ -24,13 +25,13 @@ export default async function FreshJobs() {
 
   return (
     <div className="flex flex-col gap-3">
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <JobList>
         {jobs.map((job) => (
           <li key={job.id}>
             <JobCard job={job} />
           </li>
         ))}
-      </ul>
+      </JobList>
       <Link href="/jobs" className="inline-flex min-h-11 items-center gap-1 self-start font-semibold text-brand-700">
         {t("allJobs")} <ChevronRight size={18} aria-hidden="true" />
       </Link>

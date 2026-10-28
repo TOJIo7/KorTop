@@ -25,22 +25,34 @@ function NavList({ vertical = false, onNavigate, pathname }) {
   const t = useTranslations("header.menu");
 
   return (
-    <ul className={vertical ? "flex flex-col gap-1" : "flex items-center gap-1"}>
+    <ul className={vertical ? "flex flex-col" : "flex items-center"}>
       {navItems.map(({ href, key, Icon }) => {
         const active = pathname === href || pathname.startsWith(href + "/");
         return (
           <li key={key}>
-            <Link
-              href={href}
-              onClick={onNavigate}
-              aria-current={active ? "page" : undefined}
-              className={`flex min-h-11 items-center gap-2 rounded-xl px-3 font-medium ${
-                active ? "bg-brand-50 text-brand-700" : "text-slate-700 hover:bg-slate-100"
-              }`}
-            >
-              <Icon size={20} aria-hidden="true" />
-              {t(key)}
-            </Link>
+            {vertical ? (
+              <Link
+                href={href}
+                onClick={onNavigate}
+                aria-current={active ? "page" : undefined}
+                className={`flex min-h-12 items-center gap-3 border-l-4 px-4 text-lg font-medium ${
+                  active ? "border-pom-600 bg-pom-50 text-slate-900" : "border-transparent text-slate-800 hover:bg-slate-100"
+                }`}
+              >
+                <Icon size={20} className="text-slate-500" aria-hidden="true" />
+                {t(key)}
+              </Link>
+            ) : (
+              <Link
+                href={href}
+                aria-current={active ? "page" : undefined}
+                className={`relative flex min-h-11 items-center px-3 font-medium transition-colors after:absolute after:inset-x-3 after:bottom-1.5 after:h-[3px] after:rounded-full after:transition-colors ${
+                  active ? "text-slate-900 after:bg-accent-500" : "text-slate-600 hover:text-slate-900 after:bg-transparent"
+                }`}
+              >
+                {t(key)}
+              </Link>
+            )}
           </li>
         );
       })}

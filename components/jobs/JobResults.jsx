@@ -5,6 +5,7 @@ import { formatDateTime, formatNumber, formatRub } from "@/lib/format";
 import { hasActiveFilters } from "@/lib/jobFilters";
 import ErrorState from "@/components/ui/ErrorState";
 import JobCard from "./JobCard";
+import JobList from "./JobList";
 import FavoriteButton from "./FavoriteButton";
 import EmptyState from "./EmptyState";
 import Pagination from "./Pagination";
@@ -36,25 +37,25 @@ export default async function JobResults({ filters }) {
         {t("found", { count: formatNumber(total, locale) })} · {t("dataAt", { date: formatDateTime(fetchedAt, locale) })}
       </p>
       {filtering && (
-        <p className="rounded-xl bg-accent-100 p-3 text-accent-800">
+        <p className="rounded-lg bg-accent-100 p-3 text-accent-800">
           {t("filterNote", { shown: jobs.length, size: pageSize })}
           {filters.salary && ` ${t("salaryFilter", { value: formatRub(filters.salary, locale) })}`}
         </p>
       )}
       {jobs.length === 0 ? (
         filtering && totalPages > filters.page ? (
-          <p className="rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center text-slate-600">{t("noneOnPage")}</p>
+          <p className="rounded-lg border border-dashed border-slate-300 bg-card p-6 text-center text-slate-600">{t("noneOnPage")}</p>
         ) : (
           <EmptyState canReset />
         )
       ) : (
-        <ul className="flex flex-col gap-3">
+        <JobList>
           {jobs.map((job) => (
             <li key={job.id}>
               <JobCard job={job} rate={rate} action={<FavoriteButton job={job} />} />
             </li>
           ))}
-        </ul>
+        </JobList>
       )}
       <Pagination filters={filters} totalPages={totalPages} />
     </div>

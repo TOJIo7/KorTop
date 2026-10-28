@@ -57,12 +57,12 @@ export default async function SourcesPage({ params }) {
 
   return (
     <div className="flex flex-col gap-5">
-      <h1 className="text-2xl font-bold">{tPage("title")}</h1>
+      <h1 className="text-[28px] leading-tight sm:text-4xl">{tPage("title")}</h1>
       <p className="text-slate-700">{t("intro")}</p>
       {groups.map((group) => (
         <section key={group.title} className="flex flex-col gap-2">
           <h2 className="text-lg font-semibold">{group.title}</h2>
-          <ul className="flex flex-col divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+          <ul className="flex flex-col divide-y divide-slate-200 card">
             {group.items.map((item) => (
               <li key={item.url + item.title} className="flex flex-col gap-1 p-3">
                 <a href={item.url} target="_blank" rel="noopener" className="inline-flex items-start gap-1 font-medium text-brand-700 underline">

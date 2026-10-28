@@ -28,7 +28,7 @@ export default function TicketSearch({ initial, destinations, months }) {
   });
 
   return (
-    <form onSubmit={submit} className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-end">
+    <form onSubmit={submit} className="flex flex-col gap-3 card p-4 sm:flex-row sm:items-end">
       <Field label={t("from")}>
         <Select {...select("from")}>
           <option value="DYU">{t("origins.DYU")}</option>

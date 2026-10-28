@@ -1,6 +1,6 @@
 import { connection } from "next/server";
 import { getLocale, getTranslations } from "next-intl/server";
-import { Plane } from "lucide-react";
+import { ArrowRight, Plane } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { getCheapestPrices, hasTicketsToken } from "@/lib/travelpayouts";
 import { formatRub } from "@/lib/format";
@@ -24,21 +24,33 @@ export default async function TicketTeaser() {
   }
 
   return (
-    <Teaser href="/tickets" Icon={Plane} title={t("ticketTitle")}>
+    <Teaser href="/tickets" Icon={Plane} title={t("ticketTitle")} tone="dark">
       {minPrice ? t("ticketFrom", { price: formatRub(minPrice, locale) }) : t("ticketNoPrice")}
     </Teaser>
   );
 }
 
-export function Teaser({ href, Icon, title, children }) {
+// У каждого блока свой характер: тёмный «билет», шафрановый, бумажный, гранатовый
+const tones = {
+  dark: "bg-brand-900 text-white border-brand-900 [&_.teaser-title]:text-brand-100 [&_.teaser-icon]:text-accent-300",
+  sun: "bg-accent-100 border-accent-300 [&_.teaser-title]:text-accent-800 [&_.teaser-icon]:text-accent-800",
+  plain: "bg-card border-line [&_.teaser-title]:text-slate-600 [&_.teaser-icon]:text-brand-700",
+  pom: "bg-pom-50 border-pom-600/30 [&_.teaser-title]:text-pom-700 [&_.teaser-icon]:text-pom-600",
+};
+
+export function Teaser({ href, Icon, title, children, tone = "plain" }) {
   return (
-    <Link href={href} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 hover:border-brand-600">
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-        <Icon size={24} aria-hidden="true" />
+    <Link
+      href={href}
+      className={`group flex min-h-28 flex-col justify-between gap-4 rounded-lg border p-5 transition-transform hover:-translate-y-0.5 ${tones[tone]}`}
+    >
+      <span className="flex items-center justify-between gap-2">
+        <span className="teaser-title text-sm font-bold uppercase tracking-wider">{title}</span>
+        <Icon size={22} className="teaser-icon shrink-0" aria-hidden="true" />
       </span>
-      <span className="flex flex-col">
-        <span className="text-slate-600">{title}</span>
-        <span className="text-lg font-bold">{children}</span>
+      <span className="flex items-end justify-between gap-2">
+        <span className="money text-xl leading-tight">{children}</span>
+        <ArrowRight size={20} className="shrink-0 transition-transform group-hover:translate-x-1" aria-hidden="true" />
       </span>
     </Link>
   );

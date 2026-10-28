@@ -17,7 +17,7 @@ export default function PatentTable({ rows }) {
     <section className="flex flex-col gap-3">
       <h2 className="text-lg font-semibold">{t("tableTitle")}</h2>
       <Input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t("search")} aria-label={t("search")} />
-      <ul className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+      <ul className="divide-y divide-slate-200 card">
         {visible.map((r) => (
           <li key={r.id} className="flex flex-col gap-1 p-3 sm:flex-row sm:items-center sm:gap-4">
             <span className="flex-1 font-medium">{r.name}</span>

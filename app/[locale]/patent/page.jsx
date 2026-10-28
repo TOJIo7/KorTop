@@ -36,20 +36,20 @@ export default async function PatentPage({ params }) {
     .sort((a, b) => Number(Boolean(b.price)) - Number(Boolean(a.price)));
 
   return (
-    <div className="flex flex-col gap-5">
-      <h1 className="text-2xl font-bold">{tPage("title")}</h1>
+    <div className="flex flex-col gap-8">
+      <h1 className="text-[28px] leading-tight sm:text-4xl">{tPage("title")}</h1>
 
       {/* P-5: формула простыми словами */}
-      <section className="flex flex-col gap-2 rounded-2xl bg-brand-50 p-4">
-        <h2 className="font-semibold">{t("howTitle", { year: patentYear })}</h2>
-        <p>
+      <section className="flex flex-col gap-3 rounded-lg border border-accent-300 bg-accent-100 p-5">
+        <h2 className="text-lg text-accent-800">{t("howTitle", { year: patentYear })}</h2>
+        <p className="text-slate-800">
           {t("how", {
             base: formatRub(patentFormula.base, locale),
             deflator: new Intl.NumberFormat(locale, { maximumFractionDigits: 3 }).format(patentFormula.deflator),
           })}
         </p>
-        <p className="font-mono text-sm">{t("formula")}</p>
-        <a href={patentFormula.deflatorSource} target="_blank" rel="noopener" className="text-sm text-brand-700 underline">
+        <p className="self-start rounded-md bg-card px-3 py-2 money text-sm text-slate-900">{t("formula")}</p>
+        <a href={patentFormula.deflatorSource} target="_blank" rel="noopener" className="inline-flex min-h-11 items-center self-start text-sm text-accent-800 underline underline-offset-4">
           {t("formulaSource")}
         </a>
       </section>

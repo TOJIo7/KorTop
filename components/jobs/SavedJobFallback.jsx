@@ -15,7 +15,7 @@ export default function SavedJobFallback({ id }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div role="status" className="rounded-xl bg-accent-100 p-3 text-accent-800">
+      <div role="status" className="rounded-lg bg-accent-100 p-3 text-accent-800">
         {saved ? t("savedCopy") : t("notFound")}
       </div>
       {saved ? (

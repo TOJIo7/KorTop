@@ -7,7 +7,7 @@ export default function NotFound() {
 
   return (
     <div className="flex flex-col items-start gap-3 py-10">
-      <h1 className="text-2xl font-bold">{t("title")}</h1>
+      <h1 className="text-[28px] leading-tight sm:text-4xl">{t("title")}</h1>
       <p className="text-slate-600">{t("text")}</p>
       <Link href="/" className={buttonStyles()}>
         {t("home")}

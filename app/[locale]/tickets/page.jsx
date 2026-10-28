@@ -17,8 +17,8 @@ export default async function TicketsPage({ params, searchParams }) {
   const t = await getTranslations("pages.tickets");
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">{t("title")}</h1>
+    <div className="flex flex-col gap-6">
+      <h1 className="text-[28px] leading-tight sm:text-4xl">{t("title")}</h1>
       <Suspense fallback={<Skeleton className="h-64 w-full" />}>
         <SearchAndResults searchParams={searchParams} locale={locale} />
       </Suspense>

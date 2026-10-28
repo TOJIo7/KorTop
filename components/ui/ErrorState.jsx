@@ -18,7 +18,7 @@ export default function ErrorState({ title, hint, retry }) {
   }
 
   return (
-    <div role="alert" className="flex flex-col items-center gap-3 rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+    <div role="alert" className="flex flex-col items-center gap-3 rounded-lg border border-red-200 bg-red-50 p-6 text-center">
       <CircleAlert size={40} className="text-red-600" aria-hidden="true" />
       <h2 className="text-lg font-semibold">{title}</h2>
       {hint && <p className="text-slate-700">{hint}</p>}

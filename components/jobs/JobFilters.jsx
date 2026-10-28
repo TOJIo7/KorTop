@@ -9,8 +9,9 @@ import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import RegionPicker from "./RegionPicker";
 
-// Фильтры меняют адрес (?text=...&region=...), а серверная страница сама перезапрашивает данные
-export default function JobFilters({ initial }) {
+// Фильтры меняют адрес (?text=...&region=...), а серверная страница сама перезапрашивает данные.
+// className — оформление обёртки (на главной форма лежит внутри «билета»)
+export default function JobFilters({ initial, className = "card flex flex-col gap-3 p-4" }) {
   const t = useTranslations("jobs.filters");
   const router = useRouter();
   const [pending, startTransition] = useTransition();
@@ -27,7 +28,7 @@ export default function JobFilters({ initial }) {
   }
 
   return (
-    <form onSubmit={submit} role="search" className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+    <form onSubmit={submit} role="search" className={className}>
       <Input
         type="search"
         value={text}
