@@ -28,8 +28,7 @@
   },
   "footer": {
     "disclaimer": "KorTop не работодатель и не берёт денег за трудоустройство.",
-    "sources": "Источники данных",
-    "github": "Код на GitHub"
+    "sources": "Источники данных"
   },
   "jobs": {
     "filters": {
