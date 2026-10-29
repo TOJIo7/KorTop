@@ -1,0 +1,57 @@
+{
+  "data": {
+    "2026-11-01": {
+      "flight_number": "1406",
+      "link": "/search/DYU0111MOW1?t=N417935209001793624400001845DYUKZNSVO_8df149c3fdfd90915c269f73a85a560e_13805&search_date=29102026&expected_price_uuid=01a187d4-d9d3-8031-68a2-e4e2ab254788&static_fare_key=TY%7CP1%7CH1%7CL1_1_20%7CCH1%7CR1%7CTBC1&itinerary_key=FZqGKFqgGnPwNCWZX2OB6Q&expected_price_source=share&expected_price_currency=rub&expected_price=13805",
+      "origin_airport": "DYU",
+      "destination_airport": "SVO",
+      "departure_at": "2026-11-01T08:15:00+05:00",
+      "airline": "N4",
+      "destination": "MOW",
+      "origin": "DYU",
+      "price": 13805,
+      "gate": "Kupi.com",
+      "return_transfers": 0,
+      "duration": 1845,
+      "duration_to": 325,
+      "duration_back": 0,
+      "transfers": 1
+    },
+    "2026-11-02": {
+      "flight_number": "1418",
+      "link": "/search/DYU0211MOW1?t=N417935782001793683500001875DYUUFASVO_b3b9b12aabd692868a022f7ea93d96b2_13834&search_date=29102026&expected_price_uuid=01a187d4-a88c-8031-6a1b-704d16c7180f&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH1%7CR0%7CTBC0&itinerary_key=paX9sA1jRfgYdAoeBCIPvg&expected_price_source=share&expected_price_currency=rub&expected_price=13834",
+      "origin_airport": "DYU",
+      "destination_airport": "SVO",
+      "departure_at": "2026-11-02T00:10:00+05:00",
+      "airline": "N4",
+      "destination": "MOW",
+      "origin": "DYU",
+      "price": 13834,
+      "gate": "Kupi.com",
+      "return_transfers": 0,
+      "duration": 1875,
+      "duration_to": 345,
+      "duration_back": 0,
+      "transfers": 1
+    },
+    "2026-11-03": {
+      "flight_number": "1406",
+      "link": "/search/DYU0311MOW1?t=N417936937001793714700000470DYUKZNSVO_4fcb60a1a56a20810d7e25b417c672e0_13913&search_date=29102026&expected_price_uuid=01a187d5-f5b2-8030-e744-2c96ad23d06b&static_fare_key=TY%7CP0%7CH1%7CL1_1_20%7CCH1%7CR1%7CTBC1&itinerary_key=vJP2IbfHwW0kTkHS5xfuHw&expected_price_source=share&expected_price_currency=rub&expected_price=13913",
+      "origin_airport": "DYU",
+      "destination_airport": "SVO",
+      "departure_at": "2026-11-03T08:15:00+05:00",
+      "airline": "N4",
+      "destination": "MOW",
+      "origin": "DYU",
+      "price": 13913,
+      "gate": "Kupi.com",
+      "return_transfers": 0,
+      "duration": 470,
+      "duration_to": 330,
+      "duration_back": 0,
+      "transfers": 1
+    }
+  },
+  "currency": "rub",
+  "success": true
+}

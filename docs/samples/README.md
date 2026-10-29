@@ -33,4 +33,4 @@
 
 ## Aviasales (Travelpayouts)
 
-- Без токена: `401`. Нужен токен в `.env.local` → `TRAVELPAYOUTS_TOKEN`, потом сохранить пример `aviasales-dyu-mow.json`.
+- Без токена: `401`. С токеном (заголовок `X-Access-Token`) метод `v3/grouped_prices?group_by=departure_at` отдаёт `data` — объект «дата → самый дешёвый билет»: `price`, `departure_at`, `transfers`, `airline`, `link` (путь на aviasales.ru). Пример (первые 3 даты): `aviasales-dyu-mow.json`, проверено 29.10.2026.
