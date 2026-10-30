@@ -11,6 +11,8 @@ const COUNT = 6;
 // Свежие вакансии на главной: берём первую страницу и сортируем по дате публикации.
 // Оборачивать в <Suspense>
 export default async function FreshJobs() {
+  // Первым: при сборке к API не идём — ошибка внутри "use cache" роняет сборку даже через try/catch
+  await connection();
   const t = await getTranslations("home");
 
   let jobs;
@@ -18,8 +20,6 @@ export default async function FreshJobs() {
     const result = await searchJobs({ page: 1 });
     jobs = [...result.jobs].sort((a, b) => (b.postedAt ?? "").localeCompare(a.postedAt ?? "")).slice(0, COUNT);
   } catch {
-    // API не ответил во время сборки — отложим этот блок до настоящего запроса
-    await connection();
     return <p className="text-slate-600">{t("freshUnavailable")}</p>;
   }
 
