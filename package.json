@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "bot:dev": "node --env-file=.env.local scripts/botDev.mjs",
+    "bot:webhook": "node --env-file=.env.local scripts/setWebhook.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.62.0",

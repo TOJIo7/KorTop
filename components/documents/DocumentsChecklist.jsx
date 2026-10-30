@@ -59,6 +59,12 @@ export default function DocumentsChecklist({ steps }) {
                   </span>
                 )}
               </div>
+              {/* Заметная галочка — то же, что клик по кружку с номером */}
+              <label className="mt-3 flex min-h-11 cursor-pointer items-center gap-2 border-t border-line pt-3 font-medium">
+                <input type="checkbox" checked={checked} onChange={() => toggle(step.id)} className="size-5 accent-pom-600" />
+                {t("markDone")}
+                <span className="sr-only">: {step.title}</span>
+              </label>
               </div>
             </li>
           );

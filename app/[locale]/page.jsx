@@ -13,6 +13,7 @@ import TicketTeaser, { Teaser } from "@/components/home/TicketTeaser";
 import { LogoMark } from "@/components/layout/Logo";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Skeleton from "@/components/ui/Skeleton";
+import ChipSlider from "@/components/ui/ChipSlider";
 
 const EMPTY_FILTERS = { text: "", region: "", housing: false, foreign: false, salary: null };
 
@@ -87,7 +88,7 @@ async function PopularRegions() {
   return (
     <div>
       <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wider text-slate-500">{t("popularRegions")}</h2>
-      <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+      <ChipSlider>
         {regions
           .filter((r) => r.popular)
           .map((r) => (
@@ -100,7 +101,7 @@ async function PopularRegions() {
               </Link>
             </li>
           ))}
-      </ul>
+      </ChipSlider>
     </div>
   );
 }

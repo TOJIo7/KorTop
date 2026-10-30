@@ -21,6 +21,19 @@ export default function JobFilters({ initial, className = "card flex flex-col ga
   const [foreign, setForeign] = useState(initial.foreign ?? false);
   const [salary, setSalary] = useState(initial.salary ?? "");
 
+  // Адрес изменился (поиск, «назад» в браузере) — подставляем фильтры из адреса.
+  // Без key: смена key при переходе оставляла на странице старую форму
+  const initialKey = JSON.stringify(initial);
+  const [seenKey, setSeenKey] = useState(initialKey);
+  if (seenKey !== initialKey) {
+    setSeenKey(initialKey);
+    setText(initial.text);
+    setRegion(initial.region);
+    setHousing(initial.housing);
+    setForeign(initial.foreign ?? false);
+    setSalary(initial.salary ?? "");
+  }
+
   function submit(e) {
     e.preventDefault();
     const query = toJobsQuery({ text: text.trim(), region, housing, foreign, salary: Number(salary) || null });

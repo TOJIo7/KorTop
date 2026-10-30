@@ -17,6 +17,15 @@ export default function TicketSearch({ initial, destinations, months }) {
   const [pending, startTransition] = useTransition();
   const [form, setForm] = useState(initial);
 
+  // Адрес изменился (поиск, «назад» в браузере) — подставляем выбор из адреса.
+  // Без key: смена key при переходе оставляла на странице старую форму
+  const initialKey = JSON.stringify(initial);
+  const [seenKey, setSeenKey] = useState(initialKey);
+  if (seenKey !== initialKey) {
+    setSeenKey(initialKey);
+    setForm(initial);
+  }
+
   function submit(e) {
     e.preventDefault();
     startTransition(() => router.push({ pathname: "/tickets", query: form }));

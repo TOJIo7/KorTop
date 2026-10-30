@@ -5,6 +5,7 @@ import JobFilters from "@/components/jobs/JobFilters";
 import CategoryChips from "@/components/jobs/CategoryChips";
 import JobResults from "@/components/jobs/JobResults";
 import JobListSkeleton from "@/components/jobs/JobListSkeleton";
+import JobAlertButton from "@/components/jobs/JobAlertButton";
 import Skeleton from "@/components/ui/Skeleton";
 
 export async function generateMetadata({ params }) {
@@ -32,13 +33,14 @@ export default async function JobsPage({ params, searchParams }) {
 
 async function FiltersAndResults({ searchParams }) {
   const filters = parseJobFilters(await searchParams);
-  // key: при смене адреса форма пересоздаётся с новыми значениями
+  // key: при смене адреса список заново показывает скелетоны, пока грузится
   const key = JSON.stringify(filters);
 
   return (
     <>
-      <JobFilters key={key} initial={filters} />
+      <JobFilters initial={filters} />
       <CategoryChips filters={filters} />
+      <JobAlertButton filters={filters} />
       <Suspense key={key} fallback={<JobListSkeleton />}>
         <JobResults filters={filters} />
       </Suspense>

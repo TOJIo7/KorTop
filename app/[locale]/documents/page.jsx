@@ -3,6 +3,7 @@ import { TriangleAlert } from "lucide-react";
 import documents from "@/data/documents.json";
 import { formatDate } from "@/lib/format";
 import DocumentsChecklist from "@/components/documents/DocumentsChecklist";
+import ReminderForm from "@/components/reminders/ReminderForm";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -40,6 +41,7 @@ export default async function DocumentsPage({ params }) {
       </div>
       <p className="text-slate-700">{t("intro")}</p>
       <DocumentsChecklist steps={steps} />
+      <ReminderForm />
     </div>
   );
 }

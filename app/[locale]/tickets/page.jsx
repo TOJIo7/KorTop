@@ -38,7 +38,7 @@ async function SearchAndResults({ searchParams, locale }) {
 
   return (
     <>
-      <TicketSearch key={key} initial={selected} destinations={destinations} months={monthOptions} />
+      <TicketSearch initial={selected} destinations={destinations} months={monthOptions} />
       <Suspense key={key} fallback={<Skeleton className="h-64 w-full" />}>
         <TicketResults {...selected} />
       </Suspense>

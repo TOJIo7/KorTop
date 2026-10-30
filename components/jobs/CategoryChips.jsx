@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { categories } from "@/lib/categories";
 import { toJobsQuery } from "@/lib/jobFilters";
+import ChipSlider from "@/components/ui/ChipSlider";
 
 // Быстрые категории: подставляют профессию, регион и «с жильём» сохраняются
 export default function CategoryChips({ filters = {} }) {
@@ -10,7 +11,7 @@ export default function CategoryChips({ filters = {} }) {
   return (
     <div>
       <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wider text-slate-500">{t("title")}</h2>
-      <ul className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+      <ChipSlider>
         {categories.map(({ key, query, Icon }) => {
           const active = filters.text === query;
           const href = { pathname: "/jobs", query: toJobsQuery({ ...filters, text: query, page: 1 }) };
@@ -29,7 +30,7 @@ export default function CategoryChips({ filters = {} }) {
             </li>
           );
         })}
-      </ul>
+      </ChipSlider>
     </div>
   );
 }

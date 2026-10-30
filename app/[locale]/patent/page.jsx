@@ -6,6 +6,7 @@ import { formatDate, formatRub } from "@/lib/format";
 import PatentTable from "@/components/patent/PatentTable";
 import CalculatorWithRate from "@/components/patent/CalculatorWithRate";
 import Skeleton from "@/components/ui/Skeleton";
+import ReminderForm from "@/components/reminders/ReminderForm";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -57,6 +58,8 @@ export default async function PatentPage({ params }) {
       <Suspense fallback={<Skeleton className="h-96 w-full" />}>
         <CalculatorWithRate />
       </Suspense>
+
+      <ReminderForm />
 
       <PatentTable rows={rows} />
     </div>
