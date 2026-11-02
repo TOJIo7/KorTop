@@ -1,10 +1,13 @@
 import { searchJobs } from "@/lib/trudvsem";
 import { regions } from "@/lib/regions";
 import { categories } from "@/lib/categories";
+import { hasRedis } from "@/lib/redis";
+import { updateRegionCounts } from "@/lib/regionCounts";
 
 // Прогрев кэша: Vercel Cron раз в сутки (vercel.json) заранее загружает популярные поиски,
 // чтобы посетитель не ждал 15 секунд ответа «Работа России»
 export const maxDuration = 300;
+const COUNTS_DEADLINE_MS = 265_000; // запас до maxDuration: один запрос к API идёт до 25 секунд
 
 // Не больше 3 запросов одновременно: на 8 параллельных API перестаёт отвечать
 const CONCURRENCY = 3;
@@ -26,6 +29,7 @@ export async function GET(request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
+  const startedAt = Date.now();
   const queue = popularSearches();
   let ok = 0;
   let failed = 0;
@@ -44,5 +48,8 @@ export async function GET(request) {
   }
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
-  return Response.json({ ok, failed });
+  // Числа для карты — в оставшееся время; что не успели, обновится в следующий запуск
+  const counts = hasRedis() ? await updateRegionCounts(startedAt + COUNTS_DEADLINE_MS) : null;
+
+  return Response.json({ ok, failed, counts });
 }

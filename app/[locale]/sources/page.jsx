@@ -51,6 +51,7 @@ export default async function SourcesPage({ params }) {
       items: [
         ...scams.whatToDo.filter((w) => w.source).map((w) => ({ title: w.sourceTitle, url: w.source, checked: date(scams.checkedAt) })),
         { title: t("regions"), url: "https://opendata.trudvsem.ru/api/v1/vacancies", checked: date(regionsData.checkedAt) },
+        { title: t("mapBorders"), url: "https://www.naturalearthdata.com/", note: t("mapBordersNote") },
       ],
     },
   ];

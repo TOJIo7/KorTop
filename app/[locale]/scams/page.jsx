@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ExternalLink, Phone } from "lucide-react";
 import scams from "@/data/scams.json";
+import AdChecker from "@/components/scams/AdChecker";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 export async function generateMetadata({ params }) {
@@ -16,6 +17,7 @@ export default async function ScamsPage({ params }) {
   const t = await getTranslations("scams");
   const tPage = await getTranslations("pages.scams");
   const pick = (value) => value[locale] ?? value.ru;
+  const signs = Object.fromEntries(scams.signs.map((s) => [s.id, { title: pick(s.title), example: pick(s.example) }]));
 
   return (
     <div className="flex flex-col gap-10">
@@ -26,6 +28,8 @@ export default async function ScamsPage({ params }) {
           {t("rule")}
         </blockquote>
       </div>
+
+      <AdChecker signs={signs} />
 
       <section className="flex flex-col gap-4">
         <SectionTitle>{t("signsTitle")}</SectionTitle>
@@ -44,7 +48,7 @@ export default async function ScamsPage({ params }) {
         </ol>
       </section>
 
-      <section className="flex flex-col gap-4 rounded-lg bg-brand-900 p-5 text-white sm:p-7">
+      <section id="what-to-do" className="flex scroll-mt-20 flex-col gap-4 rounded-lg bg-brand-900 p-5 text-white sm:p-7">
         <h2 className="text-xl text-white sm:text-2xl">{t("whatToDoTitle")}</h2>
         <ol className="flex flex-col gap-4">
           {scams.whatToDo.map((item, index) => (

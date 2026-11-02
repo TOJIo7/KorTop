@@ -82,6 +82,19 @@
   }
 }
 
+/* Карта: регионы проявляются с запада на восток (задержку задаёт RegionMap) */
+@keyframes region-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map-region {
+    animation: region-in 0.5s ease-out both;
+  }
+}
+
 /* Карточка: бумажная, с тонкой линией вместо тени */
 @utility card {
   background: var(--color-card);

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
-import { FileText, Receipt, Search, ShieldAlert } from "lucide-react";
+import { FileText, Map as MapIcon, Receipt, Search, ShieldAlert } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { regionName, regions } from "@/lib/regions";
 import { getPatent } from "@/lib/patents";
@@ -87,7 +87,12 @@ async function PopularRegions() {
 
   return (
     <div>
-      <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wider text-slate-500">{t("popularRegions")}</h2>
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <h2 className="font-sans text-sm font-bold uppercase tracking-wider text-slate-500">{t("popularRegions")}</h2>
+        <Link href="/map" className="inline-flex min-h-11 shrink-0 items-center gap-1 font-semibold text-brand-700 underline underline-offset-4">
+          <MapIcon size={18} aria-hidden="true" /> {t("showOnMap")}
+        </Link>
+      </div>
       <ChipSlider>
         {regions
           .filter((r) => r.popular)
